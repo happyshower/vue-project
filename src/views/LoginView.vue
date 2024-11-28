@@ -30,7 +30,7 @@ const form = reactive({
 })
 
 const onSubmit = () => {
-  if (form.name === 'admin' && form.password === '123456') {
+  if (form.name == 'admin' && form.password === '123456') {
     router.push('home')
   } else {
     alert('What Happen???')
