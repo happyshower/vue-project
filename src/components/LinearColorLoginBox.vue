@@ -1,11 +1,10 @@
 <template>
   <div class="login">
-    <div class="bg-box">
-      <div class="rotate-box">
-
-
-
-      </div>
+    <div class="bg-box" :style="{ width: style.width + 'px', height: style.height + 'px' }">
+      <div
+        class="rotate-box"
+        :style="{ width: style.width + 10 + 'px', height: style.height + 10 + 'px' }"
+      ></div>
     </div>
     <div class="form">
       <slot></slot>
@@ -25,15 +24,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
-  width: 300px;
+  /* height: 300px;
+  width: 300px; */
   background: white;
   position: absolute;
 }
 .bg-box {
   overflow: hidden;
-  width: 310px;
-  height: 310px;
+  /* width: 310px;
+  height: 310px; */
   position: relative;
   border: 1px solid #c4edde;
 }
@@ -52,3 +51,7 @@
   }
 }
 </style>
+
+<script setup lang="ts">
+var { style } = defineProps(['style'])
+</script>

@@ -1,5 +1,5 @@
 <template>
-  <LinearColorLoginBox>
+  <LinearColorLoginBox :width="300" :height="300">
     <el-form :model="form" label-width="auto" style="max-width: 600px">
       <el-form-item label="Name">
         <el-input v-model="form.name" />
