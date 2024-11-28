@@ -5,19 +5,32 @@ on:
   push:
     branches:
       - main
-
 jobs:
   eslint:
+    name: runner / eslint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: reviewdog/action-eslint@v1
         with:
-          node-version: 20
-      - run: npm install # or yarn install
-      - uses: sibiraj-s/action-eslint@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }} # optional
-          eslint-args: '--ignore-path=.gitignore --quiet'
-          extensions: 'js,jsx,ts,tsx,vue'
-          annotations: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: "src/"
+# jobs:
+#   eslint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#       - run: npm install # or yarn install
+#       - uses: sibiraj-s/action-eslint@v3
+#         with:
+#           token: ${{ secrets.GITHUB_TOKEN }} # optional
+#           eslint-args: '--ignore-path=.gitignore --quiet'
+#           extensions: 'js,jsx,ts,tsx,vue'
+#           annotations: true
