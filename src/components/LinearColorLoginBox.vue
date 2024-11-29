@@ -1,7 +1,9 @@
 <template>
   <div class="login">
-    <div class="bg-box" :style="{ width: style.width + 10 + 'px', height: style.height + 10 + 'px' }">
-      <div class="rotate-box"></div>
+    <div class="bg-box" :style="style">
+      <div
+        class="rotate-box"
+      ></div>
     </div>
     <div class="form">
       <slot></slot>
@@ -39,5 +41,11 @@
 </style>
 
 <script setup lang="ts">
-var { style } = defineProps(['style'])
+// import { defineComponent } from 'vue'
+defineProps({
+  style: {
+    type: Object as () => Record<string, string>, // 使用 Record<string, string> 类型来传递样式
+    required: true,
+  }
+})
 </script>

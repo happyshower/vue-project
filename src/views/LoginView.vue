@@ -1,5 +1,5 @@
 <template>
-  <LinearColorLoginBox :style="loginBoxStyle">
+  <LinearColorLoginBox :style="dynamicStyle">
     <el-form :model="form" label-width="auto" style="max-width: 600px">
       <el-form-item label="Name">
         <el-input v-model="form.name" />
@@ -29,8 +29,7 @@
 
 <script lang="ts" setup>
 import router from '@/router'
-import { reactive } from 'vue'
-import BlockSlideLoginBox from '@/components/BlockSlideLoginBox.vue';
+import { reactive, ref } from 'vue'
 import LinearColorLoginBox from '@/components/LinearColorLoginBox.vue';
 
 const form = reactive({
@@ -38,16 +37,16 @@ const form = reactive({
   password: '',
 })
 
-const loginBoxStyle = {
-  width: 300,
-  height: 300
-}
+const dynamicStyle = ref<Record<string, string>>({
+  width: "310px",
+  height: "310px",
+});
 
 const onSubmit = () => {
   if (form.name === 'admin' && form.password === '123456') {
     router.push('home')
   } else {
-    alert('What Happen ???')
+    alert('What Happen ??? sb')
   }
 }
 </script>
