@@ -17,15 +17,6 @@
   justify-content: center;
   align-items: center;
 }
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  width: 300px;
-  background: white;
-  position: absolute;
-}
 .bg-box {
   overflow: hidden;
   width: 310px;

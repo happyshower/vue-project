@@ -1,5 +1,5 @@
 <template>
-  <LinearColorLoginBox :width="300" :height="300">
+  <LinearColorLoginBox :style="loginBoxStyle">
     <el-form :model="form" label-width="auto" style="max-width: 600px">
       <el-form-item label="Name">
         <el-input v-model="form.name" />
@@ -12,10 +12,19 @@
         <el-button>Cancel</el-button>
       </el-form-item>
     </el-form>
-</LinearColorLoginBox>
+  </LinearColorLoginBox>
 </template>
 
 <style>
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  background: white;
+  position: absolute;
+}
 </style>
 
 <script lang="ts" setup>
@@ -28,6 +37,11 @@ const form = reactive({
   name: '',
   password: '',
 })
+
+const loginBoxStyle = {
+  width: 300,
+  height: 300
+}
 
 const onSubmit = () => {
   if (form.name === 'admin' && form.password === '123456') {
