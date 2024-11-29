@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="bg-box" :style="style">
-      <div class="rotate-box"></div> 
+      <div class="rotate-box"></div>
     </div>
     <div class="form">
       <slot></slot>
