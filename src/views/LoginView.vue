@@ -39,8 +39,8 @@ const form = reactive({
 })
 
 const loginBoxStyle = {
-  width: 300,
-  height: 300
+  width: "310px",
+  height: "310px"
 }
 
 const onSubmit = () => {

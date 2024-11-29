@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <div class="bg-box" :style="{ width: style.width + 10 + 'px', height: style.height + 10 + 'px' }">
+    <div class="bg-box" :style="{ width: style.width, height: style.height }">
       <div class="rotate-box"></div>
     </div>
     <div class="form">
