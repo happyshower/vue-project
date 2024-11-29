@@ -1,9 +1,7 @@
 <template>
   <div class="login">
     <div class="bg-box" :style="style">
-      <div
-        class="rotate-box"
-      ></div>
+      <div class="rotate-box"></div>
     </div>
     <div class="form">
       <slot></slot>
@@ -46,6 +44,6 @@ defineProps({
   style: {
     type: Object as () => Record<string, string>, // 使用 Record<string, string> 类型来传递样式
     required: true,
-  }
+  },
 })
 </script>
